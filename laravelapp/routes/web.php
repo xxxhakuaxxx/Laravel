@@ -19,8 +19,6 @@ Route::get('/', function () {
 
 Route::get('hello', 'HelloController@index');
 
-Route::get('hello/other', 'HelloController@other');
-
 /* 実習問題 */
 
 Route::get('jissyu2', 'JissyuController@index');        /* Chapter2_実習問題_1 */
