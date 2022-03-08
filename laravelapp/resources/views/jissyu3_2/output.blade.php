@@ -11,13 +11,13 @@
     <h1>Blade/Index</h1>
     <ol>
     @foreach($data as $item)
-    @isset($item)
+    @if($loop->first)
     <p>データ一覧</p>
-    @endisset
+    @endif
     <li>No,{{$loop->iteration}}.{{$item}}</li>
-    @empty($item)
+    @if($loop->last)
     <p>ここまで出力</p>
-    @endempty
+    @endif
     @endforeach
  </body>
 </html>
