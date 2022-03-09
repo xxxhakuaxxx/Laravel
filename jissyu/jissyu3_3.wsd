@@ -1,0 +1,14 @@
+@startuml jissyu3_3
+actor "ユーザ" as a 
+boundary "ブラウザ" as b 
+control "web.php" as c 
+control "jissyu3_3Controller" as d 
+boundary "jissyu3_3.index.blade.php" as e 
+boundary "layouts.jissyu.blade.php" as f 
+a -> b :該当ページをリクエスト[/jissyu5]
+b -> c :GET[/jissyu5]
+c -> d :@index 
+d -> e 
+e -> f :@extends 
+e <-- f 
+@enduml
