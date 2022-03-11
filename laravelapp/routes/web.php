@@ -38,3 +38,9 @@ Route::get('jissyu4', 'jissyu3_2Controller@index');     /* Chapter3_2実習問�
 Route::post('jissyu4', 'jissyu3_2Controller@post');
 
 Route::get('jissyu5', 'jissyu3_3Controller@index');     /* Chapter3_３実習問題_３ */
+
+Route::get('jissyu6', 'jissyu4_1Controller@index');     /* Chapter4_1実習問題*/
+Route::post('jissyu6', 'jissyu4_1Controller@post');
+
+Route::get('jissyu7', 'jissyu4_2Controller@index');     /* Chapter4_2実習問題*/
+Route::post('jissyu7', 'jissyu4_2Controller@post');
