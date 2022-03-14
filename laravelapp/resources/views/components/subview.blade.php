@@ -7,9 +7,6 @@
        font-size:12pt; }
     </style>
     <div class="subview">
-        <p class="subview_title">{{$subview_title}}</p>
-        <p class="subview_content">{{$subview_content}}</p>
-        <ul>
-            @each('components.version',$version,'item')
-        </ul>
+       <p class="subview_title">{{$subview_title}}</p>
+       <p class="subview_content">{{$subview_content}}</p>
     </div>

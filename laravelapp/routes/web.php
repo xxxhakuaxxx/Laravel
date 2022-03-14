@@ -44,3 +44,10 @@ Route::post('jissyu6', 'jissyu4_1Controller@post');
 
 Route::get('jissyu7', 'jissyu4_2Controller@index');     /* Chapter4_2実習問題*/
 Route::post('jissyu7', 'jissyu4_2Controller@post');
+
+// 効果測定
+
+Route::get('kouka1_1', 'Kouka1_1Controller@index');       /* kouka1_1効果測定 */
+
+Route::get('kouka1_2', 'Kouka1_2Controller@index');                     /* kouka1_2効果測定 */
+Route::post('kouka1_2', 'Kouka1_2Controller@post');

@@ -19,8 +19,8 @@ class Jissyu4_2Controller extends Controller
         $rules = [
             'name' => 'required|max:10',
             'adress' => 'required|max:20_',
-            'login_id' => 'required|numeric|between8,16',
-            'password' => 'required|between8,16',
+            'login_id' => 'required|numeric|digits_between:8,16',
+            'password' => 'required|between:8,16',
         ];
         $messages = [
             'name.required' => '名前は必ず入力して下さい。',
@@ -33,12 +33,7 @@ class Jissyu4_2Controller extends Controller
             'password.required' => 'パスワードは必ず入力して下さい。',
             'password.between' => 'パスワードは8文字以上16文字以内で入力して下さい。',
         ];
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:10',
-            'adress' => 'required|max:20_',
-            'login_id' => 'required|numeric|between8,16',
-            'password' => 'required|between8,16',
-        ]);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return redirect('/jissyu7')
                 ->withErrors($validator)
