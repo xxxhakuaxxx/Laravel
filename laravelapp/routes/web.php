@@ -33,6 +33,8 @@ Route::get('hello/del', 'HelloController@del');
 
 Route::post('hello/del', 'HelloController@remove');
 
+Route::get('hello/show', 'HelloController@show');
+
 // use App\Http\Middleware\HelloMiddleware;　を追記
 
 /* Route::get('hello', 'HelloController@index')
