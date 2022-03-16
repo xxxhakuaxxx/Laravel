@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\DB;
 class HelloController extends Controller
 {
     public function index(Request $request) {
-        $items = DB::table('people')->get();
+        $items = DB::table('people')
+            ->orderBy('age', 'asc')
+            ->get();
         return view('hello.index', ['items' => $items]);
     }
 
@@ -65,11 +67,11 @@ class HelloController extends Controller
 
     
     public function show (Request $request) {
-        $name = $request->name;
+        $min = $request->min;
+        $max = $request->max;
         $items = DB::table('people')
-            ->where('name', 'like', '%' . $name . "%")
-            ->orWhere('mail', 'like', '%' . $name . '%')
-            ->get();
+            ->whereRaw('age >= ? and age <= ?',
+            [$min, $max])->get();
         return view('hello.show', ['items' => $items]);
     }
 
