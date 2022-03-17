@@ -1,0 +1,16 @@
+@startuml jissyu5_1
+actor "ユーザー" as a
+boundary "ブラウザ" as b 
+control "web.php" as c 
+control "jissyu5_1Controller" as d 
+boundary "input.blade.php" as e 
+boundary "show.blade.php" as f 
+a -> b :該当ページをリクエスト[/jissyu10]
+b -> c :GET[/jissyu10]
+c -> d :@index
+d -> e
+a -> e :選択ボタンを押下
+c <- e :GET[/jissyu10/show]
+c -> d :@show
+d -> f 
+@enduml

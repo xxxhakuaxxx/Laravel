@@ -35,6 +35,11 @@ Route::post('hello/del', 'HelloController@remove');
 
 Route::get('hello/show', 'HelloController@show');
 
+Route::get('person', 'PersonController@index');
+
+Route::get('person/find', 'PersonController@find');
+Route::post('person/find', 'PersonController@search');
+
 // use App\Http\Middleware\HelloMiddleware;　を追記
 
 /* Route::get('hello', 'HelloController@index')
@@ -58,6 +63,21 @@ Route::post('jissyu6', 'jissyu4_1Controller@post');
 
 Route::get('jissyu7', 'jissyu4_2Controller@index');     /* Chapter4_2実習問題*/
 Route::post('jissyu7', 'jissyu4_2Controller@post');
+
+Route::get('jissyu10', 'jissyu5_1Controller@index');     /* Chapter5_1実習問題*/
+Route::get('jissyu10/show', 'jissyu5_1Controller@show');
+
+Route::get('jissyu11', 'Jissyu5_2Controller@index');     /* Chapter5_2実習問題*/
+Route::get('jissyu11/show', 'Jissyu5_2Controller@show');
+Route::get('jissyu11/add', 'Jissyu5_2Controller@add');
+Route::post('jissyu11/add', 'Jissyu5_2Controller@create');
+Route::get('jissyu11/edit', 'Jissyu5_2Controller@edit');
+Route::post('jissyu11/update', 'Jissyu5_2Controller@update');
+Route::get('jissyu11/del', 'Jissyu5_2Controller@del');
+Route::post('jissyu11/remove', 'Jissyu5_2Controller@remove');
+
+Route::get('jissyu13', 'jissyu6_1Controller@index');     /* Chapter5_1実習問題*/
+Route::get('jissyu13/find', 'jissyu6_1Controller@find');
 
 // 効果測定
 
