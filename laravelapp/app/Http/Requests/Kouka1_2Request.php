@@ -19,7 +19,7 @@ class Kouka1_2Request extends FormRequest
     {
         return [
             'name' => 'required|max:10',
-            'age' => 'required|integer',
+            'age' => 'required|integer|between:0,150',
             'mail' => 'required|email',
             'school' => 'required|max:20',
         ];

@@ -12,7 +12,7 @@ class Kouka1_2Controller extends Controller
         return view('kouka1_2.input');
     }
 
-    public function post(Request $request)
+    public function post(Kouka1_2Request $request)
     {
         //全データの取得
         $data = $request->all();
