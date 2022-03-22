@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <form action="/person/find" method="post">
+    <form action="/jissyu13/find" method="post">
     @csrf
     <input type="text" name="input" value="{{$input}}">
     <input type="submit" value="検索">

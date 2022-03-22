@@ -1,0 +1,64 @@
+@startuml jissyu5_2
+actor "ユーザー" as a
+boundary "ブラウザ" as b 
+control "web.php" as c 
+control "jissyu6_3Controller" as d 
+entity "Person" as e 
+boundary "input.blade.php" as f  
+boundary "show.blade.php" as g  
+boundary "add.blade.php" as h  
+boundary "edit.blade.php" as i  
+boundary "del.blade.php" as j  
+a -> b :該当ページをリクエスト[/jissyu14]
+b -> c :GET[/jissyu14]
+c -> d :@index
+d -> e :all()
+d <- e 
+d -> f 
+a -> f :検索ボタンを押下
+c <- f :GET[/jissyu14/find]
+c -> d :@find
+d -> e :where()->firet()
+d <- e 
+d -> g 
+a -> f :詳細リンクを押下
+c <- f :GET[/jissyu14/show]
+c -> d :@find
+d -> e :where()->firet()
+d <- e 
+d -> g 
+a -> f :新規登録リンクを押下
+c <- f :GET[/jissyu14/add]
+c -> d :@add
+d -> h 
+a -> h :新規登録ボタンを押下
+c <- h :POST[/jissyu14/create]
+c -> d :@create
+d -> e :all()
+d <- e 
+d -> f 
+a -> f :更新リンクを押下
+c <- f :GET[/jissyu14/edit]
+c -> d :@edit
+d -> e :find()
+d <- e 
+d -> i 
+a -> i :更新ボタンを押下
+c <- f :POST[/jissyu14/update]
+c -> d :@upfate
+d -> e :find()
+d <- e 
+d -> f 
+a -> f :削除リンクを押下
+c <- f :GET[/jissyu14/delete]
+c -> d :@edit
+d -> e :find()
+d <- e 
+d -> j 
+a -> j :削除ボタンを押下
+c <- f :POST[/jissyu14/remove]
+c -> d :@upfate
+d -> e :find()->delete()
+d <- e 
+d -> f 
+@enduml
