@@ -18,22 +18,23 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'HelloController@index');
-
 Route::post('hello', 'HelloController@post');
 
 Route::get('hello/add', 'HelloController@add');
-
 Route::post('hello/add', 'HelloController@create');
 
 Route::get('hello/edit', 'HelloController@edit');
-
 Route::post('hello/edit', 'HelloController@update');
 
 Route::get('hello/del', 'HelloController@del');
-
 Route::post('hello/del', 'HelloController@remove');
 
 Route::get('hello/show', 'HelloController@show');
+
+Route::get('hello/rest', 'HelloController@rest');
+
+Route::get('hello/session', 'HelloController@ses_get');
+Route::post('hello/session', 'HelloController@ses_put');
 
 Route::get('person', 'PersonController@index');
 
@@ -53,6 +54,8 @@ Route::get('board', 'BoardController@index');
 
 Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
+
+Route::resource('rest', 'RestappController');
 
 
 // use App\Http\Middleware\HelloMiddleware;　を追記
@@ -103,6 +106,12 @@ Route::get('jissyu14/edit', 'Jissyu6_3Controller@edit');
 Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
+
+Route::resource('jissyu7_1', 'jissyu7_1Controller');                /* Chapter7_1実習問題*/
+Route::post('jissyu7_1/find', 'jissyuController@find');	
+//Resourcefulにはfind()メソッドはないので追加
+Route::get('jissyu7_1/del', 'jissyuController@del');
+//Resourcefulにはdel()メソッドはないので追加
 
 
 // 効果測定
