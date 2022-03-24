@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Person;
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Validator; 
 
 class Jissyu7_1Controller extends Controller
 {
@@ -23,7 +23,7 @@ class Jissyu7_1Controller extends Controller
         $messages = [
             'input.required' => '文字を入力してください。',
         ];
-        $validator = Validator::make($request,$rules,$messages);
+        $validator = Validator::make($request->all(),$rules,$messages);
         if($validator->fails()){
             return redirect('/jissyu7_1')
             ->withErrors($validator)
@@ -66,6 +66,7 @@ class Jissyu7_1Controller extends Controller
         $person = Person::find($id);
         $form = $request->all();
         unset($form['_token']);
+        $person->timestamps = false;
         $person->fill($form)->save();
         return redirect('/jissyu7_1');
     }

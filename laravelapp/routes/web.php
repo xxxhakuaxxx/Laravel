@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')
+    ->middleware('auth');
 Route::post('hello', 'HelloController@post');
 
 Route::get('hello/add', 'HelloController@add');
@@ -35,6 +36,9 @@ Route::get('hello/rest', 'HelloController@rest');
 
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_put');
+
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
 
 Route::get('person', 'PersonController@index');
 
@@ -108,9 +112,9 @@ Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
 
 Route::resource('jissyu7_1', 'jissyu7_1Controller');                /* Chapter7_1実習問題*/
-Route::post('jissyu7_1/find', 'jissyuController@find');	
+Route::post('jissyu7_1/post', 'jissyuController@find');	
 //Resourcefulにはfind()メソッドはないので追加
-Route::get('jissyu7_1/del', 'jissyuController@del');
+Route::get('jissyu7_1/{id}/del', 'jissyuController@del');
 //Resourcefulにはdel()メソッドはないので追加
 
 
