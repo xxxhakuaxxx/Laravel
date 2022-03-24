@@ -120,3 +120,7 @@ Route::get('kouka1_1', 'Kouka1_1Controller@index');       /* kouka1_1効果測�
 
 Route::get('kouka1_2', 'Kouka1_2Controller@index');                     /* kouka1_2効果測定 */
 Route::post('kouka1_2', 'Kouka1_2Controller@post');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
