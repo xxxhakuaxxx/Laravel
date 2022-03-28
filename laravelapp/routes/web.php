@@ -111,7 +111,12 @@ Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
 
-Route::resource('jissyu7_1', 'jissyu7_1Controller');                /* Chapter7_1実習問題*/
+Route::get('jissyu15', 'jissyu6_4Controller@index');     /* Chapter6_4実習問題*/
+Route::get('jissyu15/add', 'jissyu6_4Controller@add');
+Route::post('jissyu15/create', 'jissyu6_4Controller@create');
+
+
+Route::resource('jissyu7_1', 'jissyu7_1Controller');      /* Chapter7_1実習問題*/
 Route::post('jissyu7_1/post', 'jissyuController@find');	
 //Resourcefulにはfind()メソッドはないので追加
 Route::get('jissyu7_1/{id}/del', 'jissyuController@del');
@@ -122,8 +127,22 @@ Route::get('jissyu7_1/{id}/del', 'jissyuController@del');
 
 Route::get('kouka1_1', 'Kouka1_1Controller@index');       /* kouka1_1効果測定 */
 
-Route::get('kouka1_2', 'Kouka1_2Controller@index');                     /* kouka1_2効果測定 */
+Route::get('kouka1_2', 'Kouka1_2Controller@index');       /* kouka1_2効果測定 */
 Route::post('kouka1_2', 'Kouka1_2Controller@post');
+
+Route::get('kouka2_1', 'Kouka2_1Controller@index');       /* kouka2_2効果測定 */
+Route::post('kouka2_1/find', 'Kouka2_1Controller@find');
+
+Route::get('kouka2_2', 'Kouka2_2Controller@index');       /* kouka2_2効果測定 */
+Route::post('kouka2_2/find', 'Kouka2_2Controller@find');
+Route::get('kouka2_2/show', 'Kouka2_2Controller@show');
+Route::get('kouka2_2/add', 'Kouka2_2Controller@add');
+Route::post('kouka2_2/create', 'Kouka2_2Controller@create');
+Route::get('kouka2_2/edit', 'Kouka2_2Controller@edit');
+Route::post('kouka2_2/update', 'Kouka2_2Controller@update');
+Route::get('kouka2_2/del', 'Kouka2_2Controller@del');
+Route::post('kouka2_2/remove', 'Kouka2_2Controller@remove');
+
 
 Auth::routes();
 

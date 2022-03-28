@@ -1,0 +1,25 @@
+@startuml jissyu6_3
+actor "ユーザー" as a
+boundary "ブラウザ" as b 
+control "web.php" as c 
+control "jissyu6_4Controller" as d 
+entity "Subject" as e 
+boundary "index.blade.php" as f  
+boundary "add.blade.php" as g   
+a -> b :該当ページをリクエスト[/jissyu15]
+b -> c :GET[/jissyu15]
+c -> d :@index
+d -> e :all()
+d <-- e 
+d -> f 
+a -> f :新規登録リンクを押下
+c <- f :GET[/jissyu15/add]
+c -> d :@add
+d -> h 
+a -> h :新規登録ボタンを押下
+c <- h :POST[/jissyu15/create]
+c -> d :@create
+d -> e :all()
+d <-- e 
+d -> f 
+@enduml
